@@ -3,10 +3,14 @@
 import { useState, useRef, useEffect } from 'react';
 import { useToast } from "@/hooks/use-toast";
 import { useChat } from "@/hooks/useChat";
-import { ChatList } from "@/components/ChatList";
 import { ChatArea } from "@/components/ChatArea";
-import { CollabNotebook } from "@/components/CollabNotebook";
 import { Chat } from "@/types/chat";
+
+// Uncomment to activate ChatList
+// import { ChatList } from "@/components/ChatList";
+
+// Uncomment to activate CollabNotebook
+// import { CollabNotebook } from "@/components/CollabNotebook";
 
 export default function Home() {
   const { toast } = useToast();
@@ -103,6 +107,8 @@ export default function Home() {
     <div className="flex h-screen overflow-x-hidden">
       {/* Left Sidebar */}
       <div className="flex-none w-64 border-r border-gray-200 dark:border-gray-800">
+        {/* Uncomment to activate ChatList */}
+        {/* 
         <ChatList
           chats={state.chats}
           currentChatId={state.currentChatId}
@@ -111,7 +117,8 @@ export default function Home() {
           onRenameChat={renameChat}
           onImportChat={handleImportChat}
         />
-      </div>
+        */}
+      </div>       
 
       {/* Main Chat Area */}
       <div className="flex-1">
@@ -129,12 +136,15 @@ export default function Home() {
 
       {/* Right Sidebar */}
       <div className="w-80 border-l border-gray-200 dark:border-gray-800">
+        {/* Uncomment to activate CollabNotebook */}
+        {/*         
         <CollabNotebook
           content={currentChat?.collabSpace || ''}
           onUpdate={(content) => updateCollabSpace(content)}
           messages={currentChat?.messages || []}
           getSummaryFromAI={getSummaryFromAI}
         />
+         */}
       </div>
     </div>
   );

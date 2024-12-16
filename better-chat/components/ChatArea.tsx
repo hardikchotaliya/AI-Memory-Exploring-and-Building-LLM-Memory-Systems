@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { Message } from "@/types/chat";
-import { EditMemoryDialog } from './EditMemoryDialog';
+
+// Uncomment to activate EditMemoryDialog
+// import { EditMemoryDialog } from './EditMemoryDialog';
 
 interface ChatAreaProps {
   messages: Message[];
@@ -117,12 +119,15 @@ export function ChatArea({
                 rows={3}
               />
               <Button type="submit">Send</Button>
-              {onUpdateMemory && (
+              {/* Uncomment to activate EditMemoryDialog */}
+              {/*
+               {onUpdateMemory && (
                 <EditMemoryDialog
                   messages={messages}
                  onUpdateMemory={onUpdateMemory}
                 />
-              )}
+              )} 
+               */}
             </div>
           </form>
         </div>

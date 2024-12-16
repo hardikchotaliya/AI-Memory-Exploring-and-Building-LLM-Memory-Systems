@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Pencil } from "lucide-react";
 import { Chat } from "@/types/chat";
-import { ChatImportExport } from "./ChatImportExport";
+
+// Uncomment to activate ChatImportExport
+// import { ChatImportExport } from "./ChatImportExport";
 
 interface ChatListProps {
   chats: Chat[];
@@ -105,10 +107,13 @@ export function ChatList({
           ))}
         </div>
       </ScrollArea>
+      {/* Uncomment to activate ChatImportExport */}
+      {/* 
       <ChatImportExport
         currentChat={currentChat}
         onImportChat={onImportChat}
       />
+       */}
     </div>
   );
 } 
