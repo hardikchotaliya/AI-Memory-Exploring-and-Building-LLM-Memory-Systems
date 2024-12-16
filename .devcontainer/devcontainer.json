@@ -21,13 +21,7 @@
   },
   // Update welcome text and set terminal prompt to '$ '
   "onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc",
-  // Pull all branches
-  "postAttachCommand": [
-    "cd better-chat",
-    "npm install",
-    "cd ..",
-    "cd memory-demos",
-    "npm install"
-  ]
+  // Install all dependencies for both projects
+  "postAttachCommand": "npm install"
 }
 // DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference
